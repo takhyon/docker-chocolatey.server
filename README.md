@@ -1,7 +1,7 @@
 Chocolatey Simple Server
 ========================
 
-Project URL: https://github.com/takhyon/docker-chocolatey.server
+Docker Hub: https://hub.docker.com/r/srealmuto/chocolatey/
 
 ## Overview
 

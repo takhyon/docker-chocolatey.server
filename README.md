@@ -23,7 +23,7 @@ docker run -d -p 80:80 --name chocolatey.server srealmuto/chocolatey
 
 Create a data container to store your nupkg files:
 ```
-docker create -v C:/tools/chocolatey.server/App_Data/Packages -name chocolatey.server-data microsoft/nanoserver
+docker create -v C:/tools/chocolatey.server/App_Data/Packages --name chocolatey.server-data microsoft/nanoserver
 ```
 
 Start your app container using your data container:

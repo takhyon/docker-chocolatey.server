@@ -4,7 +4,8 @@ MAINTAINER Salvatore Realmuto <srealmuto@ise.com>
 
 RUN powershell -NoProfile -Command Set-ExecutionPolicy Unrestricted
 
-RUN powershell -NoProfile -Command Add-WindowsFeature NET-Framework-45-ASPNET; \
+RUN powershell -NoProfile -Command \
+    Add-WindowsFeature NET-Framework-45-ASPNET; \
     Add-WindowsFeature Web-Net-Ext45; \
     Add-WindowsFeature Web-Asp-Net45; \
     Add-WindowsFeature  Web-ISAPI-Ext; \

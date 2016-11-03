@@ -15,7 +15,9 @@ RUN powershell -NoProfile -Command \
     $env:chocolateyUseWindowsCompression = 'false'; \
     "iwr https://chocolatey.org/install.ps1 -UseBasicParsing | Invoke-Expression"
 
-RUN powershell -NoProfile -Command choco install chocolatey.server -y
+RUN powershell -NoProfile -Command \
+    choco install chocolatey.server -y; \
+    Remove-Item -Path C:\tools\chocolatey.server\App_Data\Packages\Readme.txt
 
 RUN powershell -NoProfile -Command \
     New-WebAppPool -Name chocolatey.server; \

@@ -23,7 +23,8 @@ RUN powershell -NoProfile -Command \
 RUN powershell -NoProfile -Command \
     Import-Module IISAdministration; \
     Import-Module WebAdministration; \
-    New-IISSite -Name "Chocolatey" -PhysicalPath C:\tools\chocolatey.server -BindingInformation "*:8000:"; \
+    Remove-WebSite -Name 'Default Web Site'; \
+    New-IISSite -Name "Chocolatey" -PhysicalPath C:\tools\chocolatey.server -BindingInformation "*:80:"; \
     Set-ItemProperty "IIS:\Sites\Chocolatey" ApplicationPool chocolatey.server
 
-EXPOSE 8000
+EXPOSE 80

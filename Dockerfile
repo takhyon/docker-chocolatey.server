@@ -1,15 +1,13 @@
 FROM microsoft/iis
 
-MAINTAINER Salvatore Realmuto <srealmuto@ise.com>
-
-RUN powershell -NoProfile -Command Set-ExecutionPolicy Unrestricted
+MAINTAINER Salvatore Realmuto <https://github.com/takhyon>
 
 RUN powershell -NoProfile -Command \
     Add-WindowsFeature NET-Framework-45-ASPNET; \
     Add-WindowsFeature Web-Net-Ext45; \
     Add-WindowsFeature Web-Asp-Net45; \
-    Add-WindowsFeature  Web-ISAPI-Ext; \
-    Add-WindowsFeature  Web-ISAPI-Filter
+    Add-WindowsFeature Web-ISAPI-Ext; \
+    Add-WindowsFeature Web-ISAPI-Filter
 
 RUN powershell -NoProfile -Command \
     $env:chocolateyUseWindowsCompression = 'false'; \
